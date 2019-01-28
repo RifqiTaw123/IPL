@@ -166,3 +166,20 @@ VALUES ("TV101511","666256111"),
 	("TV101518","666256118"),
 	("TV101519","666256119"),
 	("TV101520","666256120");
+
+SELECT Nama_Bank FROM Bank;
+
+SELECT * FROM Rekening;
+
+SELECT Nama, No_HP, Alamat FROM Nasabah;
+
+SELECT Username FROM Akun;
+
+SELECT No_Transaksi, Tanggal, Nominal FROM Transaksi;
+
+SELECT Nama_Admin FROM Admin;
+
+SELECT * FROM Transfer;
+
+SELECT * FROM Virtual_Akun;
+
