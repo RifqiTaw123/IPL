@@ -60,3 +60,27 @@ CREATE TABLE Virtual_Akun (
 	Rek_Virtual  varchar(20) NOT NULL,
 	CONSTRAINT Trans_vir FOREIGN KEY (No_Transaksi) REFERENCES Transaksi(No_Transaksi)
 );
+
+INSERT INTO Bank  (Kode_Bank, Nama_Bank, Alamat)
+VALUES ("B001","GangBank Bandung","Bandung"),
+	("B002","GangBank Jogjakarta","Jogjakarta"),
+	("B003","GangBank Jakarta","jakarta"),
+	("B004","GangBank Semarang","Semarang"),
+	("B005","GangBank Cilegon","Cilegon"),
+	("B006","GangBank Bali","Bali"),
+	("B007","GangBank Malang","Malang"),
+	("B008","GangBank Bogor","Bogor"),
+	("B009","GangBank Bekasi","Bekasi"),
+	("B010","GangBank Tanggerang","Tanggerang");
+	
+INSERT INTO Rekening  (No_Rekening, Kode_Bank, Saldo)
+VALUES ("666256111","B001",1000000),
+	("666256112","B002",1500000),
+	("666256113","B001",1000000000),
+	("666256114","B002",2000000),
+	("666256115","B003",3500000),
+	("666256116","B001",2360000),
+	("666256117","B005",7500000),
+	("666256118","B008",10000000),
+	("666256119","B007",15000000),
+	("666256120","B010",500000);
