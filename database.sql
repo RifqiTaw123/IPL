@@ -30,3 +30,33 @@ CREATE TABLE Akun(
 	PRIMARY KEY (Username),
 	CONSTRAINT akun_nas FOREIGN KEY (Id_Nasabah) REFERENCES Nasabah(Id_Nasabah)
 );
+
+CREATE TABLE Admin (
+	Id_Admin varchar(50) NOT NULL,
+	Nama_Admin varchar(100) NOT NULL,
+	Alamat varchar(50) NOT NULL,
+	PRIMARY KEY (Id_Admin)
+);
+
+CREATE TABLE Transaksi (
+	No_Transaksi varchar(20) NOT NULL,
+	Id_Nasabah varchar(50) NOT NULL,
+	Id_Admin varchar(50) NOT NULL,
+	Tanggal Date NOT NULL,
+	Nominal int NOT NULL,
+	PRIMARY KEY (No_Transaksi),
+	CONSTRAINT trans_nas FOREIGN KEY (Id_Nasabah) REFERENCES  Nasabah(Id_Nasabah),
+	CONSTRAINT trans_admin FOREIGN KEY (Id_Admin) REFERENCES Admin(Id_Admin)
+);
+
+CREATE TABLE Transfer (
+	No_Transaksi varchar(20) NOT NULL,
+    Rek_Tujuan varchar(20) NOT NULL,
+	CONSTRAINT Trans_tr FOREIGN KEY (No_Transaksi) REFERENCES Transaksi(No_Transaksi)
+);
+
+CREATE TABLE Virtual_Akun (
+    No_Transaksi varchar(20) NOT NULL,
+	Rek_Virtual  varchar(20) NOT NULL,
+	CONSTRAINT Trans_vir FOREIGN KEY (No_Transaksi) REFERENCES Transaksi(No_Transaksi)
+);
